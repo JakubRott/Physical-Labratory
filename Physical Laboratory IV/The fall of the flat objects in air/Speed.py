@@ -1,19 +1,22 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Arc
+import pandas as pd
 
 path = r"/workspaces/Physical-Labratory/Physical Laboratory IV/The fall of the flat objects in air/"
 
+top = pd.read_excel(path + 'speed.xlsx', sheet_name='Navetr')
+bot = pd.read_excel(path + 'speed.xlsx', sheet_name='Zavetr')
 
 # data: top side (gray line) and underside, same x convention [cm], speeds in m/s
-x_top = np.array([8.35-10,-1,-0.5,0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5,6,7,8])
-v_top = np.array([4.8,5.2,np.mean([5.2,5.9]),5.6,5.5,5.8,5.96,5.96,5.92,5.89,5.84,5.66,5.59,5.5,5.37,5.29,5.28])
-x_bot = -1*np.array([-1,0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5,6,7,8])  # cm
-v_bot = np.array([5.13,4.81,4.71,4.47,4.42,4.2,4.11,4,3.92,3.83,3.8,3.7,3.71,3.67,3.7]) # m/s
+x_top = #np.array([8.35-10,-1,-0.5,0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5,6,7,8])
+v_top = #np.array([4.8,5.2,np.mean([5.2,5.9]),5.6,5.5,5.8,5.96,5.96,5.92,5.89,5.84,5.66,5.59,5.5,5.37,5.29,5.28])
+x_bot = #-1*np.array([-1,0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5,6,7,8])  # cm
+v_bot = #np.array([5.13,4.81,4.71,4.47,4.42,4.2,4.11,4,3.92,3.83,3.8,3.7,3.71,3.67,3.7]) # m/s
 # if the underside x values are negative only because of the sign convention
 # and you want them on the same x range, use np.abs(...) here
 
-h, angle, x0 = 1.7, 31, 0              # cm, deg, cm
+h, angle, x0 = 1.7, 30, 0              # cm, deg, cm
 vmax = max(v_top.max(), v_bot.max())
 s = 5 / vmax                           # cm of plot height per m/s (visual scale only)
 
